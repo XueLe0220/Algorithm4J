@@ -1,11 +1,16 @@
-package easy;
+package cn.xuele.leetcode.easy;
 
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
-public class LC020_ValidParentheses {
+/**
+ * LeetCode 0020 <a href="https://leetcode.cn/problems/valid-parentheses/</a>
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+ *
+ * @author XueLe
+ * @since 2025-10-22
+ */
+public class LC0020_ValidParentheses {
 
     public boolean isValid(String s) {
         int n = s.length();
@@ -19,5 +24,10 @@ public class LC020_ValidParentheses {
             else stack.pop();
         }
         return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String s = "(()){{}}";
+        System.out.println(new LC0020_ValidParentheses().isValid(s));
     }
 }
