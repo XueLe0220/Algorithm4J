@@ -12,12 +12,31 @@ import cn.xuele.leetcode.easy.LC0021_MergeTwoSortedLists;
  */
 public class LC0023_MergeKSortedLists {
 
+    private static final LC0021_MergeTwoSortedLists mergeTwoSortedLists = new LC0021_MergeTwoSortedLists();
+
     //法一：顺序合并，每次取一个链表与ans合并
-    public ListNode mergeKSortedLists1(ListNode[] lists){
+    public ListNode mergeKSortedLists1(ListNode[] lists) {
         ListNode ans = null;
         for (ListNode list : lists) {
-            ans = new LC0021_MergeTwoSortedLists().mergeTwoLists(ans,list);
+            ans = mergeTwoSortedLists.mergeTwoLists(ans, list);
         }
         return ans;
+    }
+
+    //法二：分治法
+    public ListNode mergeKSortedLists2(ListNode[] lists) {
+        return merge(lists, 1, lists.length - 1);
+    }
+
+    //核心算法
+    public ListNode merge(ListNode[] lists, int l, int r) {
+        if (l == r) {
+            return lists[l];
+        }
+        if (l > r) {
+            return null;
+        }
+        int mid = (l + r) / 2;
+        return mergeTwoSortedLists.mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
     }
 }
