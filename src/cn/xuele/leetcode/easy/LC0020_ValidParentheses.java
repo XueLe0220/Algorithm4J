@@ -4,12 +4,12 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
- * LeetCode 0020 <a href="https://leetcode.cn/problems/valid-parentheses/</a>
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
  *
  * @author XueLe
  * @since 2025-10-22
  */
+
 public class LC0020_ValidParentheses {
 
     public boolean isValid(String s) {

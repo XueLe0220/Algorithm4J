@@ -1,6 +1,8 @@
 package cn.xuele.leetcode.common;
 
 /**
+ * 链表节点
+ *
  * @author XueLe
  * @since 2025/10/24
  */
